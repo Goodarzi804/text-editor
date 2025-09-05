@@ -31,6 +31,10 @@ bgColorInput.addEventListener('input', e =>{
 
 newTextButton.addEventListener('click',e=>{
     boxinput.style.display = 'flex'
+    textareabtn.style.display = 'flex'
+    textchangetn.style.display = 'none'
+    textarea.focus()
+    
 })
 
 // ---------------------------------
@@ -55,6 +59,7 @@ textareabtn.addEventListener('click',e=>{
     div.style.fontWeight = 'normal'
     board.appendChild(div)
     boxinput.style.display = 'none'
+    textarea.value = ''
     div.addEventListener('click', e=> {
         move(div)
         texts = document.querySelectorAll('.text')
@@ -62,7 +67,6 @@ textareabtn.addEventListener('click',e=>{
             elm.style.border = ``
         }
         div.style.border = '1px solid red'
-        console.log(div.style.textAlign)
         selectSize.disabled = false
         selectFont.disabled = false
         setColor.disabled = false
@@ -80,10 +84,26 @@ textareabtn.addEventListener('click',e=>{
         else{setUnderline.classList.remove('se1')}
         
         if(div.style.textAlign == 'right') use(setRight)
-        else if(div.style.textAlign == 'center') use(setCenter)
+            else if(div.style.textAlign == 'center') use(setCenter)
         else if(div.style.textAlign == 'justify') use(setJustify)
-        else use(setLeft)
+    else use(setLeft)
+})
+div.addEventListener('dblclick',e=>{
+    boxinput.style.display = 'flex'
+    textarea.focus()
+    textarea.value = div.textContent
+    textareabtn.style.display = 'none'
+    textchangetn.style.display = 'flex'
     })
+})
+
+textchangetn.addEventListener('click',e=>{
+    if(selected){
+        boxinput.style.display = 'none'
+        selected.textContent = textarea.value
+        textarea.value = ''
+        
+    }
 })
 
 
@@ -197,14 +217,16 @@ document.body.addEventListener('click',e=>{
 function move (elm) {
     let x , y
     elm.onmousedown = e => {
-            if(selectMoveTool){
-            x = e.x - elm.offsetLeft
-            y = e.y - elm.offsetTop
-            document.onmousemove = e =>{
-                elm.style.left = e.x - x + 'px'
-                elm.style.top = e.y - y + 'px'
-            }
-            document.onmouseup = e => document.onmousemove = null
+        if(selectMoveTool){
+                if(selected){
+                    x = e.x - elm.offsetLeft
+                    y = e.y - elm.offsetTop
+                    document.onmousemove = e =>{
+                        elm.style.left = e.x - x + 'px'
+                        elm.style.top = e.y - y + 'px'
+                    }
+                    document.onmouseup = e => document.onmousemove = null
+                }
         }
     }
 }
@@ -222,3 +244,6 @@ function downloadBoardAsImage() {
 }
 
 download.addEventListener('click', downloadBoardAsImage);
+
+
+window.addEventListener('contextmenu',e =>{e.preventDefault()})
