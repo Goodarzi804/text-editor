@@ -139,11 +139,11 @@ header img{
    padding: 5px;
    text-wrap: wrap;
 }
-#textareabtn{
+#boxinput button{
    all: unset;
    box-sizing: border-box;
    width: 400px;
-   display: flex;
+   display: none;
    align-items: center;
    justify-content: center;
    height: 50px;
@@ -151,7 +151,7 @@ header img{
    background-color: #a8a8a8;
    transition: 0.2s;
 }
-#textareabtn:hover{
+#boxinput button:hover{
    background-color: #c9c9c9;   
 }
 /* ----------------------------------- */
