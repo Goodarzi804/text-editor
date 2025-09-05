@@ -1,0 +1,188 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   user-select: none;
+}
+body{
+   font-family: vazir;
+   width: 100%;
+   height: 100vh;
+   overflow: hidden;
+   background-color: rgb(33, 33, 33);  
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+header{
+   width: 100%;
+   height: 35px;
+   background-color: #535353;
+   border-bottom: 2px solid #383838;
+   display: flex;
+   align-items: center;
+   color: #ddd;
+   position: fixed;
+   top: 0;
+}
+header img{
+   height: 100%;
+   margin: 10px;
+}
+/* ---------------------------------- */
+.editbar{
+   width: 100%;
+   height: 35px;
+   background-color: #535353;
+   border-bottom: 2px solid #383838;
+   display: flex;
+   align-items: center;
+   padding: 3px 0;
+   padding-left: 10px;
+   position: fixed;
+   top: 35px;
+}
+.editbar .col{
+   display: flex;
+   align-items: center;
+   height: 100%;
+   width: auto;
+   padding: 0 5px;
+   border-right: 2px solid #383838;
+   color: #ddd;
+}
+.editbar .col i{
+   font-size: 20px;
+}
+.editbar .col-text{
+   display: none;
+}
+#newTextButton{
+   margin: 0 4px;
+}
+.editbar .col input{
+   all: unset;
+   box-sizing: border-box;
+   height: 100%;
+   width: 40px;
+}
+
+.editbar .select-tool{
+   font-size: 20px;
+   color: #ccc;
+}
+.editbar I:hover{
+   color: rgb(59, 150, 255);
+}
+/* ---------------------------------- */
+
+.toolbar{
+   width: 50px;
+   height: 100%;
+   background-color:#535353 ;
+   color: #ddd;
+   display: flex;
+   flex-direction: column;
+   padding: 5px;
+   align-items: center;
+   font-size: 22px;
+   position: fixed;
+   left: 0;
+   top: 70px;
+}
+.toolbar div{
+   width: 100%;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 5px;
+   transition: 0.1s;
+}
+.toolbar div:hover{
+   border: 1px solid gray;
+   background-color:#424242;
+}
+/* ------------------------ */
+
+#board{
+   display: block;
+  width: 800px;
+  height: 500px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+   margin: 0 auto;
+   border: 1px solid rgb(255, 255, 255);
+   overflow: hidden;
+}
+/* ----------------------------*/
+
+
+#boxinput{
+   position: absolute;
+   top: 0;
+   width: 100%;
+   height: 100vh;
+   display: none;
+   justify-content: center;
+   align-items: center;
+   background-color: rgba(51, 51, 51, 0.836);
+   backdrop-filter: blur(5px);
+   flex-direction: column;
+}
+#textarea{
+   all: unset;
+   box-sizing: border-box;
+   background-color: #fff;
+   width: 400px;
+   height: 200px;
+   padding: 5px;
+   text-wrap: wrap;
+}
+#textareabtn{
+   all: unset;
+   box-sizing: border-box;
+   width: 400px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 50px;
+   padding: 5px;
+   background-color: #a8a8a8;
+   transition: 0.2s;
+}
+#textareabtn:hover{
+   background-color: #c9c9c9;   
+}
+/* ----------------------------------- */
+
+.vazir{
+   font-family: vazir;
+}
+.ariyal{
+   font-family: ariyal;
+}
+.lalezar{
+   font-family: lalezar;
+}
+.poppins{
+   font-family: poppins;
+}
+.se1{
+   background-color: #ffffff;
+   text-decoration: underline;
+}
+
+/* ----------------------------------------- */
+.text{
+   position: absolute;
+}
+#download{
+   margin: 0 10px;
+   background-color: #383838;
+   padding: 4px;
+   border-radius: 14px;
+}
+#download:hover{
+   background-color: #222222;
+}
